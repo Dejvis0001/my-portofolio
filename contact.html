@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projekt</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        // https://dashboard.emailjs.com/admin/account
+        emailjs.init("fb321GXAblyM8jn6M");
+      })();
+    </script>
+    <script type="text/javascript">
+      window.onload = function () {
+        document
+          .getElementById("contact-form")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+            // generate a five digit number for the contact_number variable
+            this.contact_number.value = (Math.random() * 100000) | 0;
+            // these IDs from the previous steps
+            emailjs.sendForm("service_ujv5c0g", "template_bi4wvc7", this).then(
+              function () {
+                console.log("SUCCESS!");
+                Swal.fire({
+                  title: "Email Sent!",
+                  text: "You will get a response as soon as possible",
+                  icon: "success",
+                  confirmButtonText: "Cool",
+                });
+              },
+              function (error) {
+                console.log("FAILED...", error);
+              }
+            );
+          });
+      };
+    </script>
+  </head>
+
+  <body class="main-body">
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a href="index.html" class="logoo">
+          <img class="logoo" src="Images/dejvis 2.png" alt="Logo" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarScroll"
+          aria-controls="navbarScroll"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul
+            class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll nav"
+            style="--bs-scroll-height: 100px; margin: 0 auto"
+          >
+            <li class="nav-item nav-word">
+              <a class="nav-link active h" aria-current="page" href="index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item nav-word">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item nav-word">
+              <a class="nav-link" href="works.html">Work</a>
+            </li>
+            <li class="nav-item nav-word">
+              <a class="nav-link main-blue-color" href="contact.html"
+                >Contact</a
+              >
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <a href="contact.html">
+              <button class="btn-talk btn-outline-success" type="button">
+                Lets Talk
+              </button>
+            </a>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hapsir">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h3 class="custom-h1">Contact Info</h3>
+            <ul class="contact-details">
+              <li class="d-flex align-items-center gap-25">
+                <div class="icon-box shadow-box icon-color">
+                  <i class="iconoir-mail"></i>
+                </div>
+                <div class="right">
+                  <span class="custom-h5">MAIL</span>
+                  <h4 class="custom-h5">devimyrto262@outlook.com</h4>
+                </div>
+              </li>
+
+              <li class="d-flex align-items-center gap-25" data-aos="zoom-in">
+                <div class="icon-box shadow-box icon-color">
+                  <i class="iconoir-phone1"></i>
+                </div>
+                <div class="right">
+                  <span class="custom-h5">Contact</span>
+                  <h4 class="custom-h5">+355 0686720021</h4>
+                </div>
+              </li>
+
+              <li class="d-flex align-items-center gap-25" data-aos="zoom-in">
+                <div class="icon-box shadow-box icon-color">
+                  <i class="iconoir-gps"></i>
+                </div>
+                <div class="right">
+                  <span class="custom-h5">Location</span>
+                  <h4 class="custom-h5">Gjolek Kokona, Tirana <br />Albania</h4>
+                </div>
+              </li>
+            </ul>
+
+            <h3 class="custom-h1">Social Info</h3>
+            <ul
+              class="social-links d-flex align-center"
+              style="padding-left: unset !important"
+            >
+              <li>
+                <a class="shadow-box klas" href=""
+                  ><i class="iconoir-ball"></i
+                ></a>
+              </li>
+              <li>
+                <a class="shadow-box klas" href=""
+                  ><i class="iconoir-bird"></i
+                ></a>
+              </li>
+              <li>
+                <a class="shadow-box klas" href=""
+                  ><i class="iconoir-camera"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col">
+            <div class="shadow-box2">
+              <div style="width: 100%">
+                <img
+                  class="icon-form-submit"
+                  src="Images/icon2-2.png"
+                  alt="Icon"
+                />
+              </div>
+              <div class="about-contact-box info-box shadow-box2">
+                <h1>Let's <br />work <span>together.</span></h1>
+              </div>
+              <form class="row g-3" id="contact-form">
+                <input type="hidden" name="contact_number" />
+                <div class="col-md-10 distanc">
+                  <input
+                    id="name-field"
+                    type="text"
+                    name="from_name"
+                    class="form-input"
+                    placeholder="Name*"
+                    aria-label="Name*"
+                  />
+                </div>
+                <div class="col-md-10 distanc">
+                  <label for="inputEmail" class="form-label"></label>
+                  <input
+                    type="email"
+                    name="user_email"
+                    class="form-input"
+                    id="email-field"
+                    placeholder="Email*"
+                  />
+                </div>
+                <div class="col-10 distanc">
+                  <label for="inputSubject" class="form-label"></label>
+                  <input
+                    type="text"
+                    name="subject"
+                    class="form-input"
+                    id="subject-field"
+                    placeholder="Your Subject*"
+                  />
+                </div>
+                <div class="col-10 distanc">
+                  <textarea
+                    name="message"
+                    class="form-areatext form-input"
+                    id="message-field"
+                    placeholder="Your Message*"
+                  ></textarea>
+                </div>
+                <div class="col-12 distanc">
+                  <button
+                    id="go"
+                    type="submit"
+                    class="btn btn-primary theme-btn"
+                    style="display: none !important"
+                  >
+                    Send Message
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary theme-btn"
+                    onclick="checkDataLogic()"
+                  >
+                    Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer-area">
+      <div class="container">
+        <div class="footer-content text-center">
+          <a href="index.html" class="logo">
+            <img src="Images/dejvis 2.png" alt="Logo" />
+          </a>
+          <ul class="footer-menu">
+            <li><a class="footer-link" href="index.html">Home</a></li>
+            <li><a class="footer-link" href="about.html">About</a></li>
+            <li><a class="footer-link" href="works.html">Works</a></li>
+            <li><a class="footer-link" href="contact.html">Contact</a></li>
+          </ul>
+          <p class="copyright">Worked by Dejvis Myrto</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts here -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Modals here for as a logic -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      function checkDataLogic() {
+        let userName = document.querySelector("#name-field");
+        let userEmail = document.querySelector("#email-field");
+        let userSubject = document.querySelector("#subject-field");
+        let userMessage = document.querySelector("#message-field");
+
+        if (userName.value == "") {
+          Swal.fire({
+            title: "Error!",
+            text: "Please make sure you enter your name",
+            icon: "error",
+            confirmButtonText: "Cool",
+          });
+        } else if (userEmail.value == "") {
+          Swal.fire({
+            title: "Error!",
+            text: "Please make sure you enter your Email",
+            icon: "error",
+            confirmButtonText: "Cool",
+          });
+        } else if (userSubject.value == "") {
+          Swal.fire({
+            title: "Error!",
+            text: "Please make sure you enter your Subject",
+            icon: "error",
+            confirmButtonText: "Cool",
+          });
+        } else if (userMessage.value == "") {
+          Swal.fire({
+            title: "Error!",
+            text: "Please make sure you enter your Message",
+            icon: "error",
+            confirmButtonText: "Cool",
+          });
+        } else {
+          document.getElementById("go").click();
+        }
+      }
+    </script>
+  </body>
+</html>
